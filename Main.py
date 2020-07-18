@@ -14,12 +14,12 @@ from discord.ext import commands
 client = discord.Client()
 
                                    
-#Creates new ChatBot class named "bob"
-bot = ChatBot('bob')
+#Creates new ChatBot class named "name"
+bot = ChatBot('name')
 
 
 bot = ChatBot(
-  'bob',
+  'name',
   storage_adapter='chatterbot.storage.SQLStorageAdapter',
   logic_adapters=[
    {
@@ -64,9 +64,9 @@ async def on_message(message):
             return
         
     if message.content.startswith("."):
-        messy = str(message.content)
-        lost = messy.replace('.', '')
-        last = lost.lower()
+        message2 = str(message.content)
+        final = message2.replace('.', '')
+        last = final.lower()
 
         bot_input = bot.get_response(last)
         response = (bot_input)
